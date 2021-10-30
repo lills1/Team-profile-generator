@@ -28,39 +28,48 @@ function generateMarkdown(employees) {
         let employeeType = tempEmployee.hasOwnProperty('officenumber') ? "manager" : (tempEmployee.hasOwnProperty('github') ? "engineer" : (tempEmployee.hasOwnProperty('school') ? "intern" : "unknown"));
         // console.log(employeeType);
         if (employeeType == "manager") {
-            content += ` <div class="card text-white mx-5 mb-3" style="max-width: 18rem;">
+            content += ` 
+            <div class="col-4">
+            <div class="card text-white mx-5 mb-3" style="max-width: 18rem;">
             <div class="card-header bg-info text-center h3">${tempEmployee.name}</div>
             <div class="card-body" style="color:black">
-                <h5 class="card-title"> Manager </h5>
+                <h5 class="card-title text-center"> Manager </h5>
                 <p class="card-text"> 
-                ID: ${tempEmployee.id} </br>
-                Email: ${tempEmployee.email}</br>
-                Office Number:${tempEmployee.officenumber}.</p>
+                ID: ${tempEmployee.id} <hr/> </br>
+                Email: <a href="mailto:${tempEmployee.email}"> ${tempEmployee.email}</a> <hr/> </br>
+                Office Number:${tempEmployee.officenumber}. <hr/> </p>
             </div>
+        </div>
         </div>`;
         } else if (employeeType == "engineer") {
-            content += ` <div class="card text-white mx-5 mb-3" style="max-width: 18rem;">
+            content += ` 
+            <div class="col-4">
+            <div class="card text-white mx-5 mb-3" style="max-width: 18rem;">
             <div class="card-header bg-info text-center h3">${tempEmployee.name}</div>
             <div class="card-body" style="color:black">
-                <h5 class="card-title">Engineer</h5>
-                <p class="card-text">  ID: ${tempEmployee.id} </br>
-               Email: <a href="mailto:${tempEmployee.email}"> ${tempEmployee.email}</a> </br>
-               Github: <a href= "https://github.com/${tempEmployee.github}"> github </a>
+                <h5 class="card-title text-center">Engineer</h5>
+                <p class="card-text">  ID: ${tempEmployee.id} <hr/> </br>
+               Email: <a href="mailto:${tempEmployee.email}"> ${tempEmployee.email}</a> <hr/> </br>
+               Github: <a href= "https://github.com/${tempEmployee.github}"> github </a> <hr/>
             </p>
             </div>
+        </div>
         </div>`;
         }
         else if (employeeType == "intern") {
-            content += ` <div class="card text-white mx-5 mb-3" style="max-width: 18rem;">
+            content += ` 
+            <div class="col-4">
+            <div class="card text-white mx-5 mb-3" style="max-width: 18rem;">
             <div class="card-header bg-info text-center h3">${tempEmployee.name}</div>
             <div class="card-body" style="color:black">
-                <h5 class="card-title">Intern</h5>
+                <h5 class="card-title text-center">Intern</h5>
                 <p class="card-text">
-                ID: ${tempEmployee.id} </br>
-                Email: ${tempEmployee.email}</br>
-                School:${tempEmployee.school}.</p>
+                ID: ${tempEmployee.id} <hr/> </br>
+                Email: <a href="mailto:${tempEmployee.email}"> ${tempEmployee.email}</a> <hr/> </br>
+                School:${tempEmployee.school}. <hr/> </p>
                 </p>
             </div>
+        </div>
         </div>`;
         }
     });
