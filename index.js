@@ -1,6 +1,10 @@
 const generateMarkdown = require("./generateMarkdown");
 const inquirer = require("inquirer");
 const fs = require("fs");
+const Manager = require("./lib/Manager");
+const Engineer = require("./lib/Engineer");
+const Intern = require("./lib/Intern");
+let employees = [];
 
 // TODO: Create a function to initialize app
 function createManager() {
@@ -31,20 +35,31 @@ function createManager() {
                 type: "list",
                 message: "Which type of team member would you like to add?",
                 name: "teamMembers",
-                choices: ["Enginner", "Intern", "I don't want to add any more"]
+                choices: ["Engineer", "Intern", "I don't want to add any more"]
 
             }
         ])
         .then((answers) => {
-            console.log(answers)
-            const htmlPageContent = generateMarkdown(answers);
-            fs.writeFile('README.md', htmlPageContent, (err) =>
-                err ? console.log(err) : console.log('successfully created file!')
+            console.log(answers);
+            tempManager = new Manager(answers.managerName, answers.managerId, answers.managerEmail, answers.managerNumber);
+            // console.log(tempManager);
+            employees.push(tempManager);
+            fs.writeFile('employees.json', JSON.stringify(employees), (err) =>
+                err ? console.log(err) : ""
             )
+            const htmlPageContent = generateMarkdown(employees);
+            fs.writeFile('employees.html', htmlPageContent, (err) =>
+                err ? console.log(err) : ""
+            )
+            // console.log(answers.teamMembers);
+            if (answers.teamMembers == "Engineer") {
+                createEngineer();
+            } else if (answers.teamMembers == "Intern") {
+                createIntern();
+            }
         });
 
 }
-
 
 function createEngineer() {
     inquirer
@@ -74,21 +89,33 @@ function createEngineer() {
                 type: "list",
                 message: "Which type of team member would you like to add?",
                 name: "teamMembers",
-                choices: ["Enginner", "Intern", "I don't want to add any more"]
+                choices: ["Engineer", "Intern", "I don't want to add any more"]
 
             }
         ])
         .then((answers) => {
-            console.log(answers)
-            const htmlPageContent = generateMarkdown(answers);
-            fs.writeFile('README.md', htmlPageContent, (err) =>
-                err ? console.log(err) : console.log('successfully created file!')
+            // console.log(answers);
+            tempEngineer = new Engineer(answers.engineerName, answers.engineerId, answers.engineerEmail, answers.engineerGithub);
+            // console.log(tempEngineer);
+            employees.push(tempEngineer);
+            fs.writeFile('employees.json', JSON.stringify(employees), (err) =>
+                err ? console.log(err) : ""
             )
+            const htmlPageContent = generateMarkdown(employees);
+            fs.writeFile('employees.html', htmlPageContent, (err) =>
+                err ? console.log(err) : ""
+            )
+            // console.log(answers.teamMembers);
+            if (answers.teamMembers == "Engineer") {
+                createEngineer();
+            } else if (answers.teamMembers == "Intern") {
+                createIntern();
+            }
         });
 
 }
 
-function createEngineer() {
+function createIntern() {
     inquirer
         .prompt([
             {
@@ -116,18 +143,31 @@ function createEngineer() {
                 type: "list",
                 message: "Which type of team member would you like to add?",
                 name: "teamMembers",
-                choices: ["Enginner", "Intern", "I don't want to add any more"]
+                choices: ["Engineer", "Intern", "I don't want to add any more"]
 
             }
         ])
         .then((answers) => {
-            console.log(answers)
-            const htmlPageContent = generateMarkdown(answers);
-            fs.writeFile('README.md', htmlPageContent, (err) =>
+            // console.log(answers);
+            tempIntern = new Intern(answers.internName, answers.internId, answers.internEmail, answers.internSchool);
+            // console.log(tempIntern);
+            employees.push(tempIntern);
+            fs.writeFile('employees.json', JSON.stringify(employees), (err) =>
                 err ? console.log(err) : console.log('successfully created file!')
             )
+            const htmlPageContent = generateMarkdown(employees);
+            fs.writeFile('employees.html', htmlPageContent, (err) =>
+                err ? console.log(err) : console.log('successfully created file!')
+            )
+            // console.log(answers.teamMembers);
+            if (answers.teamMembers == "Engineer") {
+                createEngineer();
+            } else if (answers.teamMembers == "Intern") {
+                createIntern();
+            }
         });
 
 }
+
 
 createManager();
