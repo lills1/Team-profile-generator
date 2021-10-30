@@ -29,7 +29,7 @@ function generateMarkdown(employees) {
         // console.log(employeeType);
         if (employeeType == "manager") {
             content += ` <div class="card text-white mx-5 mb-3" style="max-width: 18rem;">
-            <div class="card-header bg-info">${tempEmployee.name}</div>
+            <div class="card-header bg-info text-center h3">${tempEmployee.name}</div>
             <div class="card-body" style="color:black">
                 <h5 class="card-title"> Manager </h5>
                 <p class="card-text"> 
@@ -40,24 +40,25 @@ function generateMarkdown(employees) {
         </div>`;
         } else if (employeeType == "engineer") {
             content += ` <div class="card text-white mx-5 mb-3" style="max-width: 18rem;">
-            <div class="card-header bg-info">${tempEmployee.name}</div>
+            <div class="card-header bg-info text-center h3">${tempEmployee.name}</div>
             <div class="card-body" style="color:black">
                 <h5 class="card-title">Engineer</h5>
                 <p class="card-text">  ID: ${tempEmployee.id} </br>
-                Email: ${tempEmployee.email}</br>
-                Office Number:${tempEmployee.github}.</p>.</p>
+               Email: <a href="mailto:${tempEmployee.email}"> ${tempEmployee.email}</a> </br>
+               Github: <a href= "https://github.com/${tempEmployee.github}"> github </a>
+            </p>
             </div>
         </div>`;
         }
         else if (employeeType == "intern") {
             content += ` <div class="card text-white mx-5 mb-3" style="max-width: 18rem;">
-            <div class="card-header bg-info">${tempEmployee.name}</div>
+            <div class="card-header bg-info text-center h3">${tempEmployee.name}</div>
             <div class="card-body" style="color:black">
                 <h5 class="card-title">Intern</h5>
                 <p class="card-text">
                 ID: ${tempEmployee.id} </br>
                 Email: ${tempEmployee.email}</br>
-                Office Number:${tempEmployee.school}.</p>
+                School:${tempEmployee.school}.</p>
                 </p>
             </div>
         </div>`;
