@@ -29,7 +29,7 @@ function generateMarkdown(employees) {
         // console.log(employeeType);
         if (employeeType == "manager") {
             content += ` 
-            <div class="col-4">
+            <div class="col-12 col-sm-6 col-lg-4">
             <div class="card text-white mx-5 mb-3" style="max-width: 18rem;">
             <div class="card-header bg-info text-center h3">${tempEmployee.name}</div>
             <div class="card-body" style="color:black">
@@ -43,7 +43,7 @@ function generateMarkdown(employees) {
         </div>`;
         } else if (employeeType == "engineer") {
             content += ` 
-            <div class="col-4">
+            <div class="col-12 col-sm-6 col-lg-4">
             <div class="card text-white mx-5 mb-3" style="max-width: 18rem;">
             <div class="card-header bg-info text-center h3">${tempEmployee.name}</div>
             <div class="card-body" style="color:black">
@@ -58,7 +58,7 @@ function generateMarkdown(employees) {
         }
         else if (employeeType == "intern") {
             content += ` 
-            <div class="col-4">
+            <div class="col-12 col-sm-6 col-lg-4">
             <div class="card text-white mx-5 mb-3" style="max-width: 18rem;">
             <div class="card-header bg-info text-center h3">${tempEmployee.name}</div>
             <div class="card-body" style="color:black">
