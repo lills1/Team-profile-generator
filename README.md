@@ -8,7 +8,7 @@
   - [License](#license)
   - [Preview](#preview)
   - [Technologies](#technologies)
-  - [Extension ideas](#extension)
+  - [Extension ideas](#extensions)
   - [Contributing](#contribution)
   - [Tests](#tests)
   - [Questions](#questions)
