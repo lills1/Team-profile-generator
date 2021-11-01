@@ -19,6 +19,8 @@
   ## License
   MIT
   ## Preview
+  Follow this link to see a demo: https://drive.google.com/file/d/1toBEC18Uq2VsDLMXi-r4qJE7IX96Tz_A/view?usp=sharing
+  <img src="https://github.com/lills1/Team-profile-generator/blob/main/Capture.PNG">
 
   ## Technologies
   - HTML
