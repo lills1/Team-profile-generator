@@ -27,15 +27,15 @@
   - Javascript
   - node.js
   - Testing
-  ## Extensions
+ ## Extensions
 - Make more team members available
 - Extend options for current members. e.g. team manager, sales manager etc
 - Have an option to add picture
   ## Contribution
   No contribution is available
-  ## Tests
+ ## Tests
     npm run test
-  ## Questions
+## Questions
 <a href= "https://github.com/lills1"> github </a>
 <br>
 <a href="mailto:lilly.stephenson4@gmail.com"> lilly.stephenson4@gmail.com</a>
