@@ -31,7 +31,7 @@
 - Make more team members available
 - Extend options for current members. e.g. team manager, sales manager etc
 - Have an option to add picture
-  ## Contribution
+## Contribution
   No contribution is available
  ## Tests
     npm run test
