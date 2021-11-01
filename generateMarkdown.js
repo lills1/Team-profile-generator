@@ -37,7 +37,7 @@ function generateMarkdown(employees) {
                 <p class="card-text"> 
                 ID: ${tempEmployee.id} <hr/> </br>
                 Email: <a href="mailto:${tempEmployee.email}"> ${tempEmployee.email}</a> <hr/> </br>
-                Office Number:${tempEmployee.officenumber}. <hr/> </p>
+                Office Number: ${tempEmployee.officenumber}. <hr/> </p>
             </div>
         </div>
         </div>`;
@@ -45,11 +45,11 @@ function generateMarkdown(employees) {
             content += ` 
             <div class="col-12 col-sm-6 col-lg-4">
             <div class="card text-white mx-5 mb-3" style="max-width: 18rem;">
-            <div class="card-header bg-info text-center h3">${tempEmployee.name}</div>
+            <div class="card-header bg-info text-center h3"> ${tempEmployee.name} </div>
             <div class="card-body" style="color:black">
                 <h5 class="card-title text-center">Engineer</h5>
                 <p class="card-text">  ID: ${tempEmployee.id} <hr/> </br>
-               Email: <a href="mailto:${tempEmployee.email}"> ${tempEmployee.email}</a> <hr/> </br>
+               Email: <a href="mailto: ${tempEmployee.email}"> ${tempEmployee.email}</a> <hr/> </br>
                Github: <a href= "https://github.com/${tempEmployee.github}"> github </a> <hr/>
             </p>
             </div>
@@ -60,13 +60,13 @@ function generateMarkdown(employees) {
             content += ` 
             <div class="col-12 col-sm-6 col-lg-4">
             <div class="card text-white mx-5 mb-3" style="max-width: 18rem;">
-            <div class="card-header bg-info text-center h3">${tempEmployee.name}</div>
+            <div class="card-header bg-info text-center h3"> ${tempEmployee.name}</div>
             <div class="card-body" style="color:black">
                 <h5 class="card-title text-center">Intern</h5>
                 <p class="card-text">
                 ID: ${tempEmployee.id} <hr/> </br>
                 Email: <a href="mailto:${tempEmployee.email}"> ${tempEmployee.email}</a> <hr/> </br>
-                School:${tempEmployee.school}. <hr/> </p>
+                School: ${tempEmployee.school}. <hr/> </p>
                 </p>
             </div>
         </div>
